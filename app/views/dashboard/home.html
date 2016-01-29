@@ -1,5 +1,5 @@
 <div>
-    <div ng-controller="MainCtrl" ng-model="currentProject" class="row">
+    <div ng-model="currentProject" class="row">
         <div class="col-lg-12">
             <h1 id="repoHeader" class="page-header">{{currentProject.projectName}}</h1>
         </div>
@@ -12,9 +12,9 @@
         <stats number="12" comments="New tasks!" colour="primary" type="user"></stats>
         <stats number="18" comments="New orders!" colour="yellow" type="shopping-cart"></stats>
         <stats number="24" comments="Support tickets!" colour="red" type="support"></stats> -->
-		<div ng-controller="MainCtrl" class="form-group">
+		<div class="form-group">
 			<label for="enabledSelect">Select Measure</label>
-			<select class="form-control" id="Selector" type="text" placeholder="Selector" onChange="changeMeasure()" enabledSelect>
+			<select class="form-control" id="Selector" type="text" placeholder="Selector" enabledSelect>
 				<option ng-click="changeChart('commits')">Commits</option>
 				<option ng-click="changeChart('stars')">Stars</option>
 				<option ng-click="changeChart('forks')">Forks</option>
@@ -41,7 +41,7 @@
        <!-- </div> 
         <!-- /.col-lg-8 -->
         <!-- /.col-lg-4 -->
-		<div class="col-lg-6 col-sm-12" id="line-chart" ng-controller="MainCtrl">
+		<div class="col-lg-6 col-sm-12" id="line-chart">
         <div class="panel panel-default">
             <div class="panel-heading" id="lineChartHeading">Commit Activity</div>
             <div class="panel-body">
@@ -50,7 +50,7 @@
             </div>
         </div>
 		</div>
-		<div class="col-lg-6 col-sm-12" id="bar-chart" ng-controller="MainCtrl">
+		<div class="col-lg-6 col-sm-12" id="bar-chart">
 			<div class="panel panel-default">
 				<div class="panel-heading">Bar Chart</div>
 				<div class="panel-body">
@@ -62,3 +62,4 @@
     </div>
     <!-- /.row -->
 </div>
+
