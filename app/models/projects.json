@@ -1,0 +1,42 @@
+[
+	{		
+		"id" : "repo0",
+		"projectName" : "openui5"
+	},
+	{
+		"id" : "repo1",
+		"projectName" : "sap.github.com"
+	},
+	{
+		"id" : "repo2",
+		"projectName" : "node-rfc"
+	},
+	{
+		"id" : "repo3",
+		"projectName" : "ui5-inspector"
+	},
+	{
+		"id" : "repo4",
+		"projectName" : "PyRFC"
+	},
+	{
+		"id" : "repo5",
+		"projectName" : "HanaVora-Extensions"
+	},
+	{
+		"id" : "repo6",
+		"projectName" : "iot-starterkit"
+	},
+	{
+		"id" : "repo7",
+		"projectName" : "BUILD"
+	},
+	{
+		"id" : "repo8",
+		"projectName" : "node-hdb"
+	},
+	{
+		"id" : "repo9",
+		"projectName" : "reviewninja"
+	}
+]
