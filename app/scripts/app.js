@@ -1,14 +1,7 @@
 'use strict';
-/**
- * @ngdoc overview
- * @name sbAdminApp
- * @description
- * # sbAdminApp
- *
- * Main module of the application.
- */
+
 var myApp = angular
-  .module('sbAdminApp', [
+  .module('ossGithubSuccess', [
     'oc.lazyLoad',
     'ui.router',
     'ui.bootstrap',
@@ -31,7 +24,7 @@ var myApp = angular
             loadMyDirectives:function($ocLazyLoad){
                 return $ocLazyLoad.load(
                 {
-                    name:'sbAdminApp',
+                    name:'ossGithubSuccess',
                     files:[
                     'scripts/directives/header/header.js',
                     'scripts/directives/header/header-notification/header-notification.js',
@@ -81,7 +74,7 @@ var myApp = angular
         resolve: {
           loadMyFiles:function($ocLazyLoad) {
             return $ocLazyLoad.load({
-              name:'sbAdminApp',
+              name:'ossGithubSuccess',
               files:[
               'scripts/controllers/main.js',
               'scripts/directives/timeline/timeline.js',
@@ -119,7 +112,7 @@ var myApp = angular
               ]
             }),
             $ocLazyLoad.load({
-                name:'sbAdminApp',
+                name:'ossGithubSuccess',
                 files:['scripts/controllers/chartContoller.js']
             })
           }
@@ -153,7 +146,10 @@ var myApp = angular
        templateUrl:'views/ui-elements/grid.html',
        url:'/grid'
    })
-  }]);
+  }])
+.service('projectService', function(){
+    this.currentProject = null;
+  });
   
 myApp.factory('projectProvider', function($http){
 	return {
@@ -162,7 +158,13 @@ myApp.factory('projectProvider', function($http){
 				return response;
 			}); 
 			return promise;
-		}
+		},
+    setScope: function(scope){
+      this.scope = scope;
+    },
+    getScope: function(){
+      return this.scope;
+    }
 	}
 });
 

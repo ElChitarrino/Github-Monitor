@@ -1,12 +1,12 @@
 'use strict';
 /**
  * @ngdoc function
- * @name sbAdminApp.controller:MainCtrl
+ * @name MainCtrl
  * @description
  * # MainCtrl
- * Controller of the sbAdminApp
+ * Controller of the ossGithubSuccess
  */
-angular.module('sbAdminApp')
+angular.module('ossGithubSuccess')
   .controller('ChartCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
 	
 	$scope.line = {

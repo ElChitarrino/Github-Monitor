@@ -12,20 +12,41 @@
         <stats number="12" comments="New tasks!" colour="primary" type="user"></stats>
         <stats number="18" comments="New orders!" colour="yellow" type="shopping-cart"></stats>
         <stats number="24" comments="Support tickets!" colour="red" type="support"></stats> -->
-		<div class="form-group">
-			<label for="enabledSelect">Select Measure</label>
-			<select class="form-control" id="Selector" type="text" placeholder="Selector" enabledSelect>
-				<option ng-click="changeChart('commits')">Commits</option>
-				<option ng-click="changeChart('stars')">Stars</option>
-				<option ng-click="changeChart('forks')">Forks</option>
-				<option ng-click="changeChart('releases')">Releases</option>
-				<option ng-click="changeChart('contributors')">Contributors</option>
-				<option ng-click="changeChart('pulls')">Pull-Requests</option>
-				<option ng-click="changeChart('issues')">Issues</option>
-			</select>
+		<div class="col-lg-6 col-sm-12">
+            <div class="panel panel-default">
+                <!-- <div class="panel-heading">Select Measure</div> -->
+                <div class="panel-body">
+        			<label for="enabledSelect">Select Measure</label>
+        			<select class="form-control" id="Selector" type="text" placeholder="Selector" enabledSelect>
+        				<option ng-click="changeChart('commits')">Commits</option>
+        				<option ng-click="changeChart('stars')">Stars</option>
+        				<option ng-click="changeChart('forks')">Forks</option>
+        				<option ng-click="changeChart('releases')">Releases</option>
+        				<option ng-click="changeChart('contributors')">Contributors</option>
+        				<option ng-click="changeChart('pulls')">Pull-Requests</option>
+        				<option ng-click="changeChart('issues')">Issues</option>
+        			</select>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-sm-12">
+            <div class="panel panel-default">
+                <!-- <div class="panel-heading">Select Timeframe</div> -->
+                <div class="panel-body">
+                    <label for="enabledSelect">Select Timeframe</label>
+                    <select class="form-control" id="Selector" type="text" placeholder="SelectorTime" enabledSelect>
+                        <option ng-click="changeTime('overall')">All Available Data</option>
+                        <option ng-click="changeTime('year')">Last Year</option>
+                        <option ng-click="changeTime('month')">Last Three Months</option>
+                        <option ng-click="changeTime('week')">Last Week</option>
+                    </select>
+                </div>
+            </div>
 		</div>
+
     </div>
     
+    <span></span>
     <!-- /.panel -->
     <div class="row">
         <!-- <div class="col-lg-8">
@@ -41,25 +62,22 @@
        <!-- </div> 
         <!-- /.col-lg-8 -->
         <!-- /.col-lg-4 -->
-		<div class="col-lg-6 col-sm-12" id="line-chart">
+		<div class="col-lg-6 col-sm-12">
         <div class="panel panel-default">
             <div class="panel-heading" id="lineChartHeading">Commit Activity</div>
-            <div class="panel-body">
-                <canvas id="line" class="chart chart-line chart-xl" data="currentProject.commits.data" labels="currentProject.commits.labels" legend="true"
-                series="['Commits']"></canvas>
+            <div class="panel-body" id="line-chart">
+                <canvas id="line" class="chart chart-line chart-xl"></canvas>
             </div>
         </div>
 		</div>
 		<div class="col-lg-6 col-sm-12" id="bar-chart">
 			<div class="panel panel-default">
-				<div class="panel-heading">Bar Chart</div>
-				<div class="panel-body">
-					<canvas id="bar" class="chart chart-bar" data="bar.data" labels="bar.labels" series="bar.series"
-					options="bar.options"></canvas>
+				<div class="panel-heading" id="barChartHeading">Bar Chart</div>
+				<div class="panel-body" id="bar-chart">
+					<canvas id="bar" class="chart chart-bar"></canvas>
 				</div>
 			</div>
 		</div>
     </div>
     <!-- /.row -->
 </div>
-
