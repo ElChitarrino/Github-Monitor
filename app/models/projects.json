@@ -38,5 +38,15 @@
 	{
 		"id" : "repo9",
 		"projectName" : "review.ninja"
+	},
+	{
+		"id" : "repo10",
+		"projectName" : "electron",
+		"projectOwner" : "atom"
+	},
+	{
+		"id" : "repo11",
+		"projectName" : "nw.js",
+		"projectOwner" : "nwjs"
 	}
 ]

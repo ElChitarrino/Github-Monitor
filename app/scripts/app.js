@@ -7,6 +7,52 @@ var myApp = angular
     'ui.bootstrap',
     'angular-loading-bar',
   ])
+  .service('projectService', function($http, $rootScope){
+    this.currentProject = null;
+    this.orgMembers = new Array(0);
+    this.getCollection = function(){
+      var response = $http.get('models/dbModel.json').then(function(response) {
+        return response;
+      }); 
+      return response;
+    },
+    this.setCollection = function(collectionNew){
+      $http.post('http://localhost:8000/api/database', collectionNew).then(function(successRes){
+        console.log(successRes);
+      },function(errorRes){
+        console.log(errorRes);
+      });
+    },
+    this.getOrgMembers = function(){
+      this.handleResult = function(result){
+        var orgMembers = new Array(0);
+        for(var i = 0; i < result.length; i++){
+          orgMembers.push(result[i].login);
+        }
+        $rootScope.orgMembers = orgMembers;
+        return orgMembers;
+      };
+
+      var that = this;
+      $.ajax({
+        url: "https://api.github.com/orgs/SAP/members?per_page=100",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader ("Authorization", "Basic RWxDaGl0YXJyaW5vOjUzYTQ1MDRlYWIyZjEzMjcwZjRhYzFhZDVkOWVjMmFjMjk1NTNmMWM");
+            },
+        data: {
+          format: "json"
+        },
+        headers: {
+          Accept: "application/vnd.github.v3.star+json"
+        },
+        success: function(data){
+          that.handleResult(data);
+        },
+        type: "GET"
+      });
+    }
+
+  })
   .config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider',function ($stateProvider,$urlRouterProvider,$ocLazyLoadProvider) {
     
     $ocLazyLoadProvider.config({
@@ -86,18 +132,6 @@ var myApp = angular
           }
         }
       })
-      .state('dashboard.form',{
-        templateUrl:'views/form.html',
-        url:'/form'
-    })
-      .state('dashboard.blank',{
-        templateUrl:'views/pages/blank.html',
-        url:'/blank'
-    })
-      .state('login',{
-        templateUrl:'views/pages/login.html',
-        url:'/login'
-    })
       .state('dashboard.chart',{
         templateUrl:'views/chart.html',
         url:'/chart',
@@ -118,54 +152,26 @@ var myApp = angular
           }
         }
     })
-      .state('dashboard.table',{
-        templateUrl:'views/table.html',
-        url:'/table'
-    })
-      .state('dashboard.panels-wells',{
-          templateUrl:'views/ui-elements/panels-wells.html',
-          url:'/panels-wells'
-      })
-      .state('dashboard.buttons',{
-        templateUrl:'views/ui-elements/buttons.html',
-        url:'/buttons'
-    })
-      .state('dashboard.notifications',{
-        templateUrl:'views/ui-elements/notifications.html',
-        url:'/notifications'
-    })
-      .state('dashboard.typography',{
-       templateUrl:'views/ui-elements/typography.html',
-       url:'/typography'
-   })
-      .state('dashboard.icons',{
-       templateUrl:'views/ui-elements/icons.html',
-       url:'/icons'
-   })
-      .state('dashboard.grid',{
-       templateUrl:'views/ui-elements/grid.html',
-       url:'/grid'
-   })
-  }])
-.service('projectService', function(){
-    this.currentProject = null;
-  });
+  }]);
   
-myApp.factory('projectProvider', function($http){
-	return {
-		getProjects: function(){
-			var promise = $http.get('models/projects.json').then(function(response) {
-				return response;
-			}); 
-			return promise;
-		},
-    setScope: function(scope){
-      this.scope = scope;
-    },
-    getScope: function(){
-      return this.scope;
-    }
-	}
-});
+// myApp.factory('projectProvider', function($http){
+// 	return {
+// 		getProjects: function(){
+// 			var promise = $http.get('models/dbModel.json').then(function(response) {
+// 				return response;
+// 			}); 
+//       // $http.get('http://localhost:8000/api/database').success(function(res){
+//       //   console.log(res);
+//       // });
+// 			return promise;
+// 		},
+//     setScope: function(scope){
+//       this.scope = scope;
+//     },
+//     getScope: function(){
+//       return this.scope;
+//     }
+// 	}
+// });
 
     

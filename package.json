@@ -1,11 +1,15 @@
 {
   "name": "sb-admin",
   "version": "0.0.0",
+  "main" : "server.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/start-angular/sb-admin-angular"
+    "url": "https://github.com/ElChitarrino/Github-Monitor"
   },
-  "dependencies": {},
+  "dependencies": {
+  	"mongodb": "^1.4.26",
+	"mongoose" : "3.8.0"
+  },
   "devDependencies": {
     "grunt": "^0.4.1",
     "grunt-autoprefixer": "^0.7.3",

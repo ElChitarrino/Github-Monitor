@@ -1,5 +1,5 @@
-<div>
-    <div ng-model="currentProject" class="row">
+<div ng-model="currentProject" >
+    <div class="row">
         <div class="col-lg-12">
             <h1 id="repoHeader" class="page-header">{{currentProject.projectName}}</h1>
         </div>
@@ -7,34 +7,28 @@
     </div>
     <!-- /.row -->
     <div class="row">
-        
-      <!--  <stats number="6" comments="New comments!" colour="primary" type="comments"></stats>
-        <stats number="12" comments="New tasks!" colour="primary" type="user"></stats>
-        <stats number="18" comments="New orders!" colour="yellow" type="shopping-cart"></stats>
-        <stats number="24" comments="Support tickets!" colour="red" type="support"></stats> -->
+    
 		<div class="col-lg-6 col-sm-12">
             <div class="panel panel-default">
-                <!-- <div class="panel-heading">Select Measure</div> -->
                 <div class="panel-body">
         			<label for="enabledSelect">Select Measure</label>
-        			<select class="form-control" id="Selector" type="text" placeholder="Selector" enabledSelect>
-        				<option ng-click="changeChart('commits')">Commits</option>
-        				<option ng-click="changeChart('stars')">Stars</option>
-        				<option ng-click="changeChart('forks')">Forks</option>
-        				<option ng-click="changeChart('releases')">Releases</option>
-        				<option ng-click="changeChart('contributors')">Contributors</option>
-        				<option ng-click="changeChart('pulls')">Pull-Requests</option>
-        				<option ng-click="changeChart('issues')">Issues</option>
+        			<select class="form-control" id="MeasureSelector" type="text" placeholder="Selector" enabledSelect>
+        				<option>Commits</option>
+        				<option>Stars</option>
+        				<option>Forks</option>
+        				<option>Releases</option>
+        				<option>Contributors</option>
+        				<option>Pull-Requests</option>
+        				<option>Issues</option>
         			</select>
                 </div>
             </div>
         </div>
         <div class="col-lg-6 col-sm-12">
             <div class="panel panel-default">
-                <!-- <div class="panel-heading">Select Timeframe</div> -->
                 <div class="panel-body">
                     <label for="enabledSelect">Select Timeframe</label>
-                    <select class="form-control" id="Selector" type="text" placeholder="SelectorTime" enabledSelect>
+                    <select class="form-control" id="TimeframeSelector" type="text" placeholder="SelectorTime" enabledSelect>
                         <option ng-click="changeTime('overall')">All Available Data</option>
                         <option ng-click="changeTime('year')">Last Year</option>
                         <option ng-click="changeTime('month')">Last Three Months</option>
@@ -49,35 +43,33 @@
     <span></span>
     <!-- /.panel -->
     <div class="row">
-        <!-- <div class="col-lg-8">
+		<div class="col-lg-6 col-sm-12" id="lineDiv">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    <i class="fa fa-clock-o fa-fw"></i> Responsive Timeline
+                <div class="panel-heading" id="lineChartHeading">{{currentProject.measure}}</div>
+                <div class="panel-body" id="line-chart">
+                    <canvas id="line" class="chart chart-line chart-xl"></canvas>
                 </div>
-                <!-- /.panel-heading -->
-             <!--   <timeline></timeline>
-                <!-- /.panel-body -->
-            <!-- </div> -->
-            <!-- /.panel -->
-       <!-- </div> 
-        <!-- /.col-lg-8 -->
-        <!-- /.col-lg-4 -->
-		<div class="col-lg-6 col-sm-12">
-        <div class="panel panel-default">
-            <div class="panel-heading" id="lineChartHeading">Commit Activity</div>
-            <div class="panel-body" id="line-chart">
-                <canvas id="line" class="chart chart-line chart-xl"></canvas>
             </div>
-        </div>
 		</div>
-		<div class="col-lg-6 col-sm-12" id="bar-chart">
+		<div class="col-lg-6 col-sm-12" id="barDiv">
 			<div class="panel panel-default">
-				<div class="panel-heading" id="barChartHeading">Bar Chart</div>
+				<div class="panel-heading" id="barChartHeading">{{currentProject.measure}}</div>
 				<div class="panel-body" id="bar-chart">
 					<canvas id="bar" class="chart chart-bar"></canvas>
 				</div>
 			</div>
 		</div>
+        <div class="col-lg-6 col-sm-12" id="doughnutDiv">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="doughnutChartHeading">{{currentProject.measure}}</div>
+                <div class="panel-body" id="bar-chart">
+                    <canvas id="doughnut" class="chart chart-doughnut chart-xs"></canvas>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- /.row -->
+    <div class="panel-body">
+        <p>Overall {{currentProject.measure}}: {{currentProject.sumCurrentMeasure}}</p>
+    </div>
 </div>

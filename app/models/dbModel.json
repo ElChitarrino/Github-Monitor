@@ -1,0 +1,114 @@
+{
+	"currentProject" : {
+		"projectID" : "xy",
+		"projectName" : "xy",
+		"projectOwner" : "xy",
+		"currentMeasure" : "xy",
+		"commitActivity" : {
+			"commits" : [],
+			"lastUpdate" : "dateXY"
+		},
+		"starActivity" : {
+			"stars" : [],
+			"lastUpdate" : "dateXY",
+			"page" : 1
+		},
+		"forkActivity" : {
+			"forks" : [],
+			"lastUpdate" : "dateXY",
+			"page" : 1
+		},
+		"releaseActivity" : {
+			"releases" : [{"name" : "releaseXY", "date" : "datexy", "downloads" : 100}],
+			"lastUpdate" : "dateXY"
+		},
+		"contributorActivity" : {
+			"contributors" : ["agraebe" , "ccmehil", "bettyB"],
+			"contributions" : [1000 , 666 , 20],
+			"contributorsSAP" : ["agraebe" , "ccmehil"],
+			"lastUpdate" : "dateXY",
+			"page" : 1
+		},
+		"pullActivity" : {
+			"pulls" : [{"dateCreated" : "dateXY", "dateClosed" : "dateUU"}],
+			"lastUpdate" : "dateXY",
+			"page" : 1
+		},
+		"issueActivity" : {
+			"issues" : [{"dateCreate" : "dateAA", "dateClosed" : "dateBB"}],
+			"lastUpdate" : "dateXY",
+			"page" : 1
+		}
+	},
+	"projects" : [
+		{		
+			"projectID" : "repo0",
+			"projectName" : "openui5",
+			"projectOwner" : "SAP",
+			"currentMeasure" : "xy",
+			"commitActivity" : {},
+			"starActivity" : {},
+			"forkActivity" : {},
+			"releaseActivity" : {},
+			"contributorActivity" : {},
+			"pullActivity" : {},
+			"issueActivity" : {}
+		},
+		{
+			"projectID" : "repo1",
+			"projectName" : "sap.github.com",
+			"projectOwner" : "SAP"
+		},
+		{
+			"projectID" : "repo2",
+			"projectName" : "node-rfc",
+			"projectOwner" : "SAP"
+		},
+		{
+			"projectID": "repo3",
+			"projectName" : "ui5-inspector",
+			"projectOwner" : "SAP"
+		},
+		{
+			"projectID" : "repo4",
+			"projectName" : "PyRFC",
+			"projectOwner" : "SAP"
+		},
+		{
+			"projectID" : "repo5",
+			"projectName" : "HanaVora-Extensions",
+			"projectOwner" : "SAP"
+		},
+		{
+			"projectID" : "repo6",
+			"projectName" : "iot-starterkit",
+			"projectOwner" : "SAP"
+		},
+		{
+			"projectID" : "repo7",
+			"projectName" : "BUILD",
+			"projectOwner" : "SAP"
+		},
+		{
+			"projectID" : "repo8",
+			"projectName" : "node-hdb",
+			"projectOwner" : "SAP"
+		},
+		{
+			"projectID" : "repo9",
+			"projectName" : "review.ninja",
+			"projectOwner" : "reviewninja"
+		},
+		{
+			"projectID" : "repo10",
+			"projectName" : "electron",
+			"projectOwner" : "atom"
+		},
+		{
+			"projectID" : "repo11",
+			"projectName" : "nw.js",
+			"projectOwner" : "nwjs"
+		}
+	],
+	"orgMembersSAP" : ["name1" , "name2" , "name3"]
+}
